@@ -68,7 +68,7 @@ if streamlit.button('Get Fruit Load List'):
     my_data_rows = get_fruit_load_list()
     streamlit.header("The fruit load contains:")
 
-streamlit.dataframe(my_data_rows)
+# streamlit.dataframe(my_data_rows)
 
 #Adding second entry box
 def insert_row_snowflake(new_fruit):
