@@ -113,4 +113,34 @@ if streamlit.button('Add a Fruit to the List'):
     streamlit.text(back_from_function)
     my_cnx.close()
 
+streamlit.header("Save your favorite breakfest!")
+
+#snowflake related functions
+def get_breakfest_load_list():
+    with my_cnx.cursor() as my_cur:
+        my_cur.execute("select * from fruit_load_list")
+        return my_cur.fetchall()
+
+#adding button to load breakfest
+if streamlit.button('Find best breakfest'):
+    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+    my_data_rows = get_breakfest_load_list()
+    my_cnx.close()
+    streamlit.header("The breakfest load contains:")
+
+# streamlit.dataframe(my_data_rows)
+
+#Adding second entry box
+def insert_row_snowflake(new_breakfest):
+    with my_cnx.cursor() as my_cur:
+        my_cur.execute("insert into breakfest_load_list values ('" + new_breakfest +"')")
+        return "Thanks for adding " + new_breakfest
+
+add_my_breakfest = streamlit.text_input('What breakfest would you like to add?','kiwi')
+if streamlit.button('Save favorite breakfest'):
+    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+    backs_from_function = insert_row_snowflake(add_my_breakfest)
+    streamlit.text(backs_from_function)
+    my_cnx.close()
+
 # streamlit.write('Thanks for adding ', add_my_fruit)
