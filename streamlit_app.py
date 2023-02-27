@@ -60,16 +60,16 @@ streamlit.text('Hit generate when you feel no more fruits are needed for recipe'
 
 streamlit.button('Generate recipe!')
 #recipe_name = streamlit.text('Avocado & strawberry smoothie')
-streamlit.text('Recipe Avocado & strawberry smoothie is generated')
+streamlit.text('Recipe Avocado & Strawberry smoothie is generated 🥑🥭')
 
-streamlit.header("Avocado & strawberry smoothie")
+streamlit.header("🥑Avocado & 🥭Strawberry smoothie")
 
 streamlit.header("Ingridients")
 
 #receipe = streamlit.text_input('Hint: Hit generate when you feel no more fruits are needed for recipe')
 streamlit.text('')
-streamlit.text('½ avocado, stoned, peeled and cut into chunks')
-streamlit.text('150g strawberry, halved')
+streamlit.text('½ 🥑avocado, stoned, peeled and cut into chunks')
+streamlit.text('150g 🥭strawberry, halved')
 streamlit.text('4 tbsp low-fat natural yogurt')
 streamlit.text('200ml semi-skimmed milk')
 streamlit.text('lemon or lime juice, to taste')
