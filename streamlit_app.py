@@ -136,7 +136,7 @@ def insert_row_snowflake(new_breakfest):
         my_cur.execute("insert into breakfest_load_list values ('" + new_breakfest +"')")
         return "Thanks for adding " + new_breakfest
 
-add_my_breakfest = streamlit.text_input('What day is today','Monday')
+add_my_breakfest = streamlit.text_input('Weekday','Monday')
 if streamlit.button('Save Favorite Breakfest'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     backs_from_function = insert_row_snowflake(add_my_breakfest)
