@@ -28,7 +28,7 @@ def get_fruityvice_data(this_fruit_choice):
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
     return fruityvice_normalized
 
-streamlit.header("Fruityvice Fruit Advice!")
+streamlit.header("Get Fruit Advice!")
 try:
     fruit_choice = streamlit.text_input('What fruit would you like information about?')
     if not fruit_choice:
@@ -54,7 +54,36 @@ except URLError as e:
 # my_cur.execute("insert into fruit_load_list values ('from _streamlit');")
 # my_data_rows = my_cur.fetchall()
 
-streamlit.header("View our Fruid List - Add your Favorites!")
+#streamlit.header("Generate recipe!")
+
+streamlit.text_input('Hit generate when you feel no more fruits are needed for recipe')
+
+streamlit.button('Generate recipe!')
+
+streamlit.text_input('Hint: Hit generate when you feel no more fruits are needed for recipe')
+
+streamlit.header("Avocado & strawberry smoothie")
+
+streamlit.header("Ingridients")
+
+#receipe = streamlit.text_input('Hint: Hit generate when you feel no more fruits are needed for recipe')
+streamlit.text_input('')
+streamlit.text_input('½ avocado, stoned, peeled and cut into chunks')
+streamlit.text_input('150g strawberry, halved')
+streamlit.text_input('4 tbsp low-fat natural yogurt')
+streamlit.text_input('200ml semi-skimmed milk')
+streamlit.text_input('lemon or lime juice, to taste')
+streamlit.text_input('honey, to taste')
+
+streamlit.header("Method")
+
+streamlit.text_input('STEP 1')
+streamlit.text_input('Put all the ingredients in a blender and whizz until smooth. If the consistency is too thick, add a little water.')
+streamlit.text_input('STEP 2..')
+
+streamlit.text_input('Recipe source: BBC goodfood')
+
+streamlit.header("View our Fruit List - Add your Favorites!")
 
 #snowflake related functions
 def get_fruit_load_list():
