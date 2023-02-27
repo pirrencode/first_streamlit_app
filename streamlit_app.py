@@ -113,7 +113,7 @@ if streamlit.button('Add a Fruit to the List'):
     streamlit.text(back_from_function)
     my_cnx.close()
 
-streamlit.header("Save your favorite breakfest!")
+streamlit.header("Find best breakfest for today!")
 
 #snowflake related functions
 def get_breakfest_load_list():
@@ -136,8 +136,8 @@ def insert_row_snowflake(new_breakfest):
         my_cur.execute("insert into breakfest_load_list values ('" + new_breakfest +"')")
         return "Thanks for adding " + new_breakfest
 
-add_my_breakfest = streamlit.text_input('What breakfest would you like to add?','kiwi')
-if streamlit.button('Save favorite breakfest'):
+add_my_breakfest = streamlit.text_input('What day is today','monday')
+if streamlit.button('Save Favorite Breakfest'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     backs_from_function = insert_row_snowflake(add_my_breakfest)
     streamlit.text(backs_from_function)
