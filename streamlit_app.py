@@ -59,6 +59,8 @@ except URLError as e:
 streamlit.text('Hit generate when you feel no more fruits are needed for recipe')
 
 streamlit.button('Generate recipe!')
+#recipe_name = streamlit.text('Avocado & strawberry smoothie')
+streamlit.text('Recipe Avocado & strawberry smoothie is generated')
 
 streamlit.header("Avocado & strawberry smoothie")
 
